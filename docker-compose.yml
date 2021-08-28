@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   server:
-    container_name: bootstrap_asgi
+    container_name: asgi
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -17,7 +17,7 @@ services:
       - database
 
   database:
-    container_name: bootstrap_database
+    container_name: db
     image: postgres:13-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
